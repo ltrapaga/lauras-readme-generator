@@ -1,66 +1,55 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-
-// MIT URL [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-// Apache URL [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-// Boost URL [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
-// BDS - 3 URL [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-// If none return ""
-
 function renderLicenseBadge(data) {
   const licenseOption = data.license;
 
   let licenseBadge = "";
 
   if (licenseOption === "MIT") {
-    licenseBadge = "[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    licenseBadge =
+      "[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     return licenseBadge;
   }
   if (licenseOption === "Apache") {
     licenseBadge =
       "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-      return licenseBadge;
+    return licenseBadge;
   }
   if (licenseOption === "Boost") {
     licenseBadge =
       "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
-      return licenseBadge;
+    return licenseBadge;
   }
   if (licenseOption === "BDS 3-Clause") {
     licenseBadge =
       "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
-      return licenseBadge;
-  } if (licenseOption === 'None') {
     return licenseBadge;
   }
-
-};
-
+  if (licenseOption === "None") {
+    return licenseBadge;
+  }
+}
 
 // If there is no license, return an empty string
 function renderLicenseTOC(data) {
   const licenseOption = data.license;
- 
-  if(licenseOption === 'None') {
+
+  if (licenseOption === "None") {
     return "";
- 
   } else {
     return "* [License](#license)";
   }
-};
+}
 
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
   const licenseOption = data.license;
- 
- if(licenseOption === 'None') {
-   return "";
 
- } else {
-   return `# License
+  if (licenseOption === "None") {
+    return "";
+  } else {
+    return `# License
    ${renderLicenseBadge(data)}`;
- }
-};
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -86,11 +75,11 @@ function generateMarkdown(data) {
   # Tests
   The following is needed to run tests: ${data.test}
   # Questions
-  If you have any questions about the repository contact me directly at : ${data.email} or https://github.com/${data.github}`;
-
-};
+  If you have any questions about the repository contact me directly at : ${
+    data.email
+  } or https://github.com/${data.github}`;
+}
 
 module.exports = generateMarkdown;
-
 
 // ${data(inquirer).name}
