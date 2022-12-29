@@ -66,12 +66,14 @@ function writeReadme(fileName, data) {
   });
 }
 
-// Initialize inquirer to prompt questions array, and then run a function using the data we give back to inquirer, and call generatemarkdown padding data
+/* init function initializes inquirer to prompt questions array,
+   then run a function using the data we give back to inquirer */
 function init() {
   inquirer.prompt(questions).then(function (data) {
+    // Calls writeReadme function to create the file name "README.md" and retrieve generateMarkdown padding data 
     writeReadme("README.md", generateMarkdown(data));
   });
 }
 
-// Function call to initialize app
+// Function call to initialize application
 init();
