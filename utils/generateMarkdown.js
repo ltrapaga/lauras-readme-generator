@@ -1,8 +1,8 @@
+// Imports node modules
 const fs = require("fs");
 
 function renderLicenseBadge(data) {
   const licenseOption = data.license;
-
   let licenseBadge = "";
 
   if (licenseOption === "MIT") {
@@ -28,9 +28,8 @@ function renderLicenseBadge(data) {
   if (licenseOption === "None") {
     return licenseBadge;
   }
-};
+}
 
-// If there is no license, return an empty string
 function renderLicenseTOC(data) {
   const licenseOption = data.license;
 
@@ -39,9 +38,8 @@ function renderLicenseTOC(data) {
   } else {
     return "* [License](#license)";
   }
-};
+}
 
-// If there is no license, return an empty string
 function renderLicenseSection(data) {
   const licenseOption = data.license;
 
@@ -51,7 +49,7 @@ function renderLicenseSection(data) {
     return `# License
    ${renderLicenseBadge(data)}`;
   }
-};
+}
 
 function generateMarkdown(data) {
   return `# ${data.title}
@@ -79,6 +77,6 @@ function generateMarkdown(data) {
   If you have any questions about the repository contact me directly at : 
   ${data.email} or https://github.com/${data.github}
   `;
-};
+}
 
 module.exports = generateMarkdown;

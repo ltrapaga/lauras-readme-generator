@@ -1,13 +1,11 @@
-// README: Title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-// TODO: Include packages needed for this application
-// Imports node_modules
+// Imports node modules
 const fs = require("fs");
 const inquirer = require("inquirer");
 
 // Imports generateMarkdown function
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
   {
     // Requests the user to input the title of the project
@@ -16,13 +14,13 @@ const questions = [
     message: "What is the title of your project?",
   },
   {
-    // Prompts the user to input a description of the project
+    // Requests the user to input a description of the project
     type: "input",
     name: "description",
     message: "Give a brief description of your application.",
   },
   {
-    // Requests the user to input the installation steps required for the project's application
+    // Requests the user to input the installation steps required for the application
     type: "input",
     name: "installation",
     message: "What are the steps to get this application installed?",
@@ -34,14 +32,14 @@ const questions = [
     message: "What are the instructions for usage to navigate this project?",
   },
   {
-    // Prompts the user to choose a license type for the project from a list or to choose "None" to not include a license
+    // Prompts the user to choose a license type for the project from a list, or to choose "None" to not include a license
     type: "list",
     name: "license",
     message: "Which license is needed for this project?",
     choices: ["MIT", "Apeche", "BDS -3 Clause", "Boost", "None"],
   },
   {
-    // Requests the user to input any of the project's contributors
+    // Requests the user to input the project's contributors
     type: "input",
     name: "contributing",
     message: "Who contributed to this project?",
