@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 function renderLicenseBadge(data) {
   const licenseOption = data.license;
 
@@ -26,7 +28,7 @@ function renderLicenseBadge(data) {
   if (licenseOption === "None") {
     return licenseBadge;
   }
-}
+};
 
 // If there is no license, return an empty string
 function renderLicenseTOC(data) {
@@ -37,7 +39,7 @@ function renderLicenseTOC(data) {
   } else {
     return "* [License](#license)";
   }
-}
+};
 
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
@@ -49,37 +51,34 @@ function renderLicenseSection(data) {
     return `# License
    ${renderLicenseBadge(data)}`;
   }
-}
+};
 
 function generateMarkdown(data) {
-  return `# ${data.Title}
-  ## https://github.com/${data.github}/${data.title}
-  # Description
+  return `# ${data.title}
+  ## Description
   ${data.description}
-  # Table of Contents
+  ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
   ${renderLicenseTOC(data)}
   * [Contributing](#contributions)
   * [Tests](#test)
   * [Questions](#questions)
-  # Installation
+  ## Installation
   The following necessary dependencies must be installed to run the application: 
   ${data.installation}
-  # Usage
-  To us this application, ${data.usage}
+  ## Usage
+  To use this application, ${data.usage}
+  ## License
   ${renderLicenseSection(data)}
-  # Contributions
-  Contributors: ${data.contributions}
-  # Tests
-  The following is needed to run tests: ${data.test}
-  # Questions
-  If you have any questions about the repository contact me directly at : ${
-    data.email
-  } or https://github.com/${data.github}
+  ## Contributions
+  Contributors: ${data.contributing}
+  ## Tests
+  The following is needed to run tests: ${data.tests}
+  ## Questions
+  If you have any questions about the repository contact me directly at : 
+  ${data.email} or https://github.com/${data.github}
   `;
 };
 
 module.exports = generateMarkdown;
-
-// ${data(inquirer).name}
