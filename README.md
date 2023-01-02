@@ -13,6 +13,7 @@
   Inquirer.
   ## Usage
   To use this application, Git clone this repository, run "npm i", and then run "node index".
+  ## License
   # License
    [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Contributions
