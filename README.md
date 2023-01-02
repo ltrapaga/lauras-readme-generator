@@ -17,7 +17,6 @@
   * The first flow in the video shows how to create a README.md with a license.
   * The second flow in the video shows how to create a README.md without a license.
   ## License
-  # License
    [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Contributions
   Contributors: Laura Trapaga
